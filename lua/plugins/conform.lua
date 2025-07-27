@@ -39,6 +39,7 @@ return {
 			},
 			sql = { "sql-formatter" },
 			javascript = { "prettierd", "biome" },
+			typescript = { "prettierd", "biome" },
 		},
 	},
 }
