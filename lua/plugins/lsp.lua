@@ -4,7 +4,6 @@ return {
 		ft = "lua",
 		opts = {
 			library = {
-				-- Load luvit types when the `vim.uv` word is found
 				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
 			},
 		},
@@ -16,11 +15,11 @@ return {
 			{ "mason-org/mason.nvim", opts = {} },
 			"mason-org/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			"hrsh7th/cmp-nvim-lsp",
-			-- "saghen/blink.cmp",
+			-- "hrsh7th/cmp-nvim-lsp",
+			"saghen/blink.cmp",
 		},
 		config = function()
-			vim.lsp.set_log_level("OFF")
+			-- vim.lsp.set_log_level("OFF")
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
@@ -181,9 +180,9 @@ return {
 				},
 			})
 
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-			-- local capabilities = require("blink.cmp").get_lsp_capabilities()
+			-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+			-- capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 			local servers = {
 				ts_ls = {},
@@ -200,9 +199,6 @@ return {
 				templ = {
 					filetypes = { "templ" },
 				},
-				["html-lsp"] = {
-					filetypes = { "html", "templ" },
-				},
 				["tailwindcss"] = {
 					filetypes = { "templ", "astro", "javascript", "typescript", "react" },
 					settings = {
@@ -212,9 +208,6 @@ return {
 							},
 						},
 					},
-				},
-				["htmx-lsp"] = {
-					filetypes = { "templ", "javascript", "typescript", "svelte", "react", "html" },
 				},
 				stylua = {},
 			}
