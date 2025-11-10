@@ -1,0 +1,27 @@
+return {
+	{
+		"stevearc/oil.nvim",
+		opts = {
+			columns = {
+				"permissions",
+				"size",
+				"mtime",
+				"icon",
+			},
+
+			view_options = {
+				show_hidden = true,
+				natural_order = true,
+			},
+		},
+		keys = {
+			{ mode = "n", "<leader>e", "<CMD>Oil<CR>", desc = "Open parent directory" },
+		},
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	{
+		"JezerM/oil-lsp-diagnostics.nvim",
+		dependencies = { "stevearc/oil.nvim" },
+		opts = {},
+	},
+}
