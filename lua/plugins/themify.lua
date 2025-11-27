@@ -17,6 +17,6 @@ return {
 		"neanias/everforest-nvim",
 	},
 	keys = {
-		{ mode = "n", "<leader>ft", "<CMD>:Themify<CR>", desc = "[F]ind [T]heme" },
+		{ mode = "n", "<leader>ft", "<CMD>Themify<CR>", desc = "[F]ind [T]heme" },
 	},
 }
