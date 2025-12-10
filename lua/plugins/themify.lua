@@ -15,6 +15,7 @@ return {
 		"rose-pine/neovim",
 		"vague2k/vague.nvim",
 		"neanias/everforest-nvim",
+		"alexpasmantier/hubbamax.nvim",
 	},
 	keys = {
 		{ mode = "n", "<leader>ft", "<CMD>Themify<CR>", desc = "[F]ind [T]heme" },
