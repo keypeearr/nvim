@@ -56,17 +56,9 @@ return {
 		},
 		signature = { enabled = true },
 		sources = {
-			default = { "lazydev", "lsp", "buffer", "snippets", "path" },
+			default = { "lsp", "buffer", "snippets", "path" },
 			per_filetype = {
 				sql = { "snippets", "dadbod", "buffer" },
-			},
-			providers = {
-				lazydev = {
-					name = "LazyDev",
-					module = "lazydev.integrations.blink",
-					score_offset = 100,
-				},
-				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
 			},
 		},
 		fuzzy = { implementation = "prefer_rust_with_warning" },
